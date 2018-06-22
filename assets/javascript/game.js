@@ -4,7 +4,6 @@ $(document).ready(function () {
     var highGoal = 102;
     var lowFlw = 1;
     var highFlw = 12;
-    // var counter = 0;
     var wins = 0;
     var loss = 0;
     var goalNumber = 0;
@@ -18,34 +17,33 @@ $(document).ready(function () {
 
 
     function reset() {
-        // var counter = 0;
-        var goalNumber = 0;
-        var total = 0;
-        // var flower = [
-        // pink = 0,
-        // orange = 0,
-        // purple = 0,
-        // aqua = 0
-        // ];
-
-    }
-    //call the reset function to 
-    //reset();
+        total = 0;
+        flower = [
+        pink = 0,
+        orange = 0,
+        purple = 0,
+        aqua = 0
+         ]
 
     // a random Goal number
-    goalNumber = randomNumber(highGoal, lowGoal);
+         goalNumber = randomNumber(highGoal, lowGoal);
 
-    //Print scores and Numbers to page
-    
-    renderHTML();   
-   
     // get random number between 1 and 12 for each flower
-    for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 4; i++) {
         flower[i] = randomNumber(highFlw, lowFlw);
-        console.log(flower[i]);
+
     }
 
-    console.log(total);
+    }
+    //call the reset function 
+    reset();
+
+    
+    //Print scores and Numbers to page
+    renderHTML();
+
+  
+
     $("#pink").on("click", function () {
 
         if (total < goalNumber) {
@@ -55,16 +53,13 @@ $(document).ready(function () {
             randomFlower();
         }
 
-        if (total===goalNumber) {
+        if (total === goalNumber) {
             win();
-        } 
+        }
         if (total > goalNumber) {
             lose();
-        }   
-
-        
+        }
     });
-
 
     $("#orange").on("click", function () {
 
@@ -74,28 +69,27 @@ $(document).ready(function () {
             total += flower[1];
             $("#total").text("Total: " + total);
         }
-        if (total===goalNumber) {
+        if (total === goalNumber) {
             win();
-        } 
+        }
         if (total > goalNumber) {
             lose();
-        }   
+        }
     });
 
     $("#purple").on("click", function () {
         console.log("clicked")
-
         if (total < goalNumber) {
             console.log(flower[2], total);
             total += flower[2];
             $("#total").text("Total: " + total);
         }
-         if (total===goalNumber) {
-             win();
-         } 
-         if (total > goalNumber) {
-             lose();
-         }   
+        if (total === goalNumber) {
+            win();
+        }
+        if (total > goalNumber) {
+            lose();
+        }
     });
 
     $("#aqua").on("click", function () {
@@ -106,23 +100,14 @@ $(document).ready(function () {
             total += flower[3];
             $("#total").text("Total: " + total);
         }
-        if (total===goalNumber) {
+        if (total === goalNumber) {
 
             win();
-        } 
+        }
         if (total > goalNumber) {
             lose();
-        }   
+        }
     });
-
-
-    // if (total === goalNumber) {
-    //     win();
-    // }
-    // if (total > goalNumber) {
-    //     lose();
-    // }
-
 
 
     function randomNumber(max, min) {
@@ -130,13 +115,13 @@ $(document).ready(function () {
         return ((Math.floor(Math.random() * max) + min));
     }
 
-    function renderHTML(){
+    function renderHTML() {
 
         $("#goal").text("Goal Number: " + goalNumber);
         $("#total").text("Total: " + total);
         $("#wins").text("Wins: " + wins);
         $("#losses").text("Losses: " + loss);
-    
+
     }
 
     //put a flower on a random spot on the page.
@@ -144,14 +129,19 @@ $(document).ready(function () {
         var h = window.innerHeight;
         var w = window.innerWidth;
         var m = 0;
-        xpos = randomNumber(w,m);
-        ypos = randomNumber(h,m);
-        
-        console.log(w);    
-        console.log(h);
-        console.log(xpos,ypos)
-    
+        xpos = randomNumber(w, m);
+        ypos = randomNumber(h, m);
 
+        console.log(w);
+        console.log(h);
+        console.log(xpos, ypos)
+
+        $("#rndmFlwr").attr({
+            top: w + "px",
+            left: h + "px"
+        });
+
+        $("#flower-display").append("#rndmFlr");
     }
     function win() {
 
@@ -160,6 +150,7 @@ $(document).ready(function () {
         $("#wins").text("Wins: " + wins);
         $("#win-loss").text("You Won!!");
         reset();
+        renderHTML();
         console.log("reset passed")
     }
 
@@ -169,6 +160,7 @@ $(document).ready(function () {
         $("#losses").text("Losses: " + loss);
         $("#win-loss").text("Try Again!!");
         reset();
+        renderHTML();
         console.log("reset passed")
     }
 

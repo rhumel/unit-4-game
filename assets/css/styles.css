@@ -64,3 +64,15 @@ h1 {
    
 }
 
+img {
+    position: absolute;
+    background: url("../images/flowers-clip-art-MKijy65cq.png");
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-image: none;
+    width: 100px;
+    height: 100px;
+    Top: 0px;
+    left: 0px;
+}
