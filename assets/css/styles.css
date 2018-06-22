@@ -14,7 +14,10 @@ body {
 }
 
 h1 {
-    color:blueviolet;
+    color: magenta;
+    font-family: 'Emilys Candy', cursive;
+    size:110px;
+    text-align: center;
 
 }
  
@@ -61,6 +64,3 @@ h1 {
    
 }
 
-.container {
-    border:5px solid red;
-}
