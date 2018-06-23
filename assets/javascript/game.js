@@ -45,11 +45,10 @@ $(document).ready(function () {
   
 
     $("#pink").on("click", function () {
-
+        console.log(goalNumber)
         if (total < goalNumber) {
             total += flower[0];
             $("#total").text("Total: " + total);
-            randomFlower();
         }
 
         winLose();
@@ -121,6 +120,7 @@ $(document).ready(function () {
     // }
 
     function winLose () {
+        console.log(goalNumber)
          if (total === goalNumber) {
 
             win();
@@ -131,7 +131,7 @@ $(document).ready(function () {
 
     }
     function win() {
-
+            
         wins++;
         $("#wins").text("Wins: " + wins);
         $("#win-loss").text("You Won!!");
