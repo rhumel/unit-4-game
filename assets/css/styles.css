@@ -8,15 +8,15 @@
 
 body {
     
-  /* position: relative; */
+   position: relative; 
     
     background-image: url("./leaf-nature-green-spring-sm-122429.jpeg");
 }
 
 h1 {
-    color: magenta;
-    font-family: 'Emilys Candy', cursive;
-    size:110px;
+    color: whitesmoke;
+    font-family: 'Muli', sans-serif;
+    size:210px;
     text-align: center;
 
 }
@@ -24,47 +24,52 @@ h1 {
 
 #pink {
     background: url("../images/flowers-clip-art-MKijy65cq.png");
-    width: 100px;
-    height: 100px;
+    width:150px;    
+    height:150px;   
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
     bottom: 0px;
-    /*left:150px;
-    position: absolute;*/
+
+  
+
 }
 
 #purple {
     background: url("../images/clipart-flower-lilac-flower-clip-art-5.png");
-    width: 100px;
-    height: 100px;
+    width:150px;    
+    height:150px;   
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
-   
+    bottom: 0px;
+
 }
+
 
 #aqua {
     background: url("../images/clipart-flower-14723-aqua-flower-clip-art.png");
-    width: 100px;
-    height: 100px;
+    width:150px;    
+    height:150px;   
     background-position: center;
     background-size: 80%;
     background-repeat: no-repeat;
-   
+    bottom: 0px;
+
 }
+
 
 #orange {
     background: url("../images/animation-20clipart-1194986587157518295red_flower_raphael_seban_01.svg.med.png");
-    width: 100px;
-    height: 100px;
-    background-position: center;
+    width: 150px;
+    height: 150px;
+    background-position: center; 
     background-size: 80%;
     background-repeat: no-repeat;
-   
+    bottom: 0px;
 }
 
-img {
+/* img {
     position: absolute;
     background: url("../images/flowers-clip-art-MKijy65cq.png");
     background-position: center;
@@ -75,4 +80,4 @@ img {
     height: 100px;
     Top: 0px;
     left: 0px;
-}
+} */
