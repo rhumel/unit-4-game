@@ -47,66 +47,42 @@ $(document).ready(function () {
     $("#pink").on("click", function () {
 
         if (total < goalNumber) {
-            console.log(flower[0], total);
             total += flower[0];
             $("#total").text("Total: " + total);
             randomFlower();
         }
 
-        if (total === goalNumber) {
-            win();
-        }
-        if (total > goalNumber) {
-            lose();
-        }
+        winLose();
+
     });
 
     $("#orange").on("click", function () {
 
 
         if (total < goalNumber) {
-            console.log(flower[1], total);
             total += flower[1];
             $("#total").text("Total: " + total);
         }
-        if (total === goalNumber) {
-            win();
-        }
-        if (total > goalNumber) {
-            lose();
-        }
+        winLose();
+        
     });
 
     $("#purple").on("click", function () {
-        console.log("clicked")
         if (total < goalNumber) {
-            console.log(flower[2], total);
             total += flower[2];
             $("#total").text("Total: " + total);
         }
-        if (total === goalNumber) {
-            win();
-        }
-        if (total > goalNumber) {
-            lose();
-        }
+        winLose();
+        
     });
 
     $("#aqua").on("click", function () {
-        console.log("clicked")
-
         if (total < goalNumber) {
-            console.log(flower[3], total);
             total += flower[3];
             $("#total").text("Total: " + total);
         }
-        if (total === goalNumber) {
-
-            win();
-        }
-        if (total > goalNumber) {
-            lose();
-        }
+        winLose();
+       
     });
 
 
@@ -125,43 +101,52 @@ $(document).ready(function () {
     }
 
     //put a flower on a random spot on the page.
-    function randomFlower() {
-        var h = window.innerHeight;
-        var w = window.innerWidth;
-        var m = 0;
-        xpos = randomNumber(w, m);
-        ypos = randomNumber(h, m);
+    // function randomFlower() {
+    //     var h = window.innerHeight; 
+    //     var w = window.innerWidth;
+    //     var m = 0;
+    //     xpos = randomNumber(w, m);
+    //     ypos = randomNumber(h, m);
 
-        console.log(w);
-        console.log(h);
-        console.log(xpos, ypos)
+    //     console.log(w);
+    //     console.log(h);
+    //     console.log(xpos, ypos)
 
-        $("#rndmFlwr").attr({
-            top: w + "px",
-            left: h + "px"
-        });
+    //     $("#rndmFlwr").attr({
+    //         top: w + "px",
+    //         left: h + "px"
+    //     });
+    //     console.log("#rndmflr");
+    //     $("#flower-display").append("#rndmFlr");
+    // }
 
-        $("#flower-display").append("#rndmFlr");
+    function winLose () {
+         if (total === goalNumber) {
+
+            win();
+        }
+        if (total > goalNumber) {
+            lose();
+        }
+
     }
     function win() {
 
         wins++;
-        console.log(wins);
         $("#wins").text("Wins: " + wins);
         $("#win-loss").text("You Won!!");
         reset();
         renderHTML();
-        console.log("reset passed")
+       
     }
 
     function lose() {
         loss++;
-        console.log(loss);
         $("#losses").text("Losses: " + loss);
         $("#win-loss").text("Try Again!!");
         reset();
         renderHTML();
-        console.log("reset passed")
+       
     }
 
 });
